@@ -6,13 +6,6 @@ import org.hamcrest.Matchers.`is`
 import org.junit.Assert.*
 import org.junit.Test
 
-/**
- * TODO verificar:
- * se não houver tarefas concluídas e uma tarefa ativa;
- * que a porcentagem de tstes ativos é 100%;
- * que a porcentagem de tasks concluídas é 0%.
- */
-
 class StatisticsUtilsTest {
 
     @Test
