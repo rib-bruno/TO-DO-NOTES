@@ -54,6 +54,7 @@ interface TasksDao {
      */
     @Query("SELECT * FROM Tasks")
     suspend fun getTasks(): List<Task>
+    //fun getTasks(): List<Task>
 
     /**
      * Select a task by id.
@@ -63,6 +64,7 @@ interface TasksDao {
      */
     @Query("SELECT * FROM Tasks WHERE entryid = :taskId")
     suspend fun getTaskById(taskId: String): Task?
+     //fun getTaskById(taskId: String): Task?
 
     /**
      * Insert a task in the database. If the task already exists, replace it.
@@ -89,6 +91,7 @@ interface TasksDao {
      */
     @Query("UPDATE tasks SET completed = :completed WHERE entryid = :taskId")
     suspend fun updateCompleted(taskId: String, completed: Boolean)
+    // fun updateCompleted(taskId: String, completed: Boolean)
 
     /**
      * Delete a task by id.
@@ -97,12 +100,14 @@ interface TasksDao {
      */
     @Query("DELETE FROM Tasks WHERE entryid = :taskId")
     suspend fun deleteTaskById(taskId: String): Int
+    // fun deleteTaskById(taskId: String): Int
 
     /**
      * Delete all tasks.
      */
     @Query("DELETE FROM Tasks")
     suspend fun deleteTasks()
+    // fun deleteTasks()
 
     /**
      * Delete all completed tasks from the table.
@@ -111,4 +116,5 @@ interface TasksDao {
      */
     @Query("DELETE FROM Tasks WHERE completed = 1")
     suspend fun deleteCompletedTasks(): Int
+     //fun deleteCompletedTasks(): Int
 }
